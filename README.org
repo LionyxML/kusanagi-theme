@@ -1,0 +1,154 @@
+#+TITLE: Kusanagi Theme
+#+AUTHOR: Rahul Martim Juliato
+#+OPTIONS: toc:2 num:nil
+
+#+HTML: <p align="center"><img src="https://raw.githubusercontent.com/LionyxML/kusanagi-theme/assets/kusanagi-theme.png" alt="Kusanagi theme screenshot" /></p>
+
+#+begin_quote
+"The net is vast and infinite."
+
+/Major Motoko Kusanagi, Ghost in the Shell (1995)/
+#+end_quote
+
+* Kusanagi
+
+A dark cyberpunk theme for Emacs, inspired by /Ghost in the Shell/: neon
+cyan and hot pink accents diving through a deep-space blue background,
+with comments receding into the noise like static on the net. It
+reflects my own personal vision of cyberspace, a world of glowing
+interfaces, hidden signals, and infinite connections stretching beyond
+the screen.
+
+Kusanagi is a *proper derivative theme* built on the [[https://protesilaos.com/emacs/modus-themes][Modus themes]]
+infrastructure (version 5+), using ~modus-vivendi~ as its base palette.
+It inherits the full face coverage of the Modus themes while applying
+the Kusanagi palette on top, so every package the Modus themes support
+is themed too, out of the box.
+
+It started life as part of [[https://github.com/LionyxML/emacs-solo][emacs-solo]], but enough people asked for it
+that it now lives here as a standalone theme.
+
+* Features
+
+- *Full Modus face coverage*. Built on ~modus-vivendi~, so thousands of
+  faces across the Emacs ecosystem are handled for you.
+- *Self-contained*. Bakes in italic, bold, and prompt styling so it does
+  not depend on shared ~modus-themes-*~ user options leaking into other
+  Modus themes.
+- *Customizable through Modus machinery*. Palette overrides, palette
+  extension, and shared Modus overrides all work as expected.
+- Hand-tuned diffs, mode-line, tab-bar, completion, search, and Org
+  heading colors.
+
+* Requirements
+
+- Emacs *30.1* or newer
+- ~modus-themes~ *5.0.0* or newer
+
+#+begin_quote
+Emacs 31 ships a copy of the Modus themes (version 5+). Kusanagi will
+fall back to that bundled copy if the package is not installed
+separately, but a recent ~modus-themes~ from a package archive is
+recommended.
+#+end_quote
+
+* Installation
+
+** Manual
+
+Clone the repository and point Emacs at it:
+
+#+begin_src emacs-lisp
+  (add-to-list 'custom-theme-load-path "/path/to/kusanagi-theme")
+  (load-theme 'kusanagi t)
+#+end_src
+
+** use-package with :vc (Emacs 30+)
+
+#+begin_src emacs-lisp
+  (use-package kusanagi-theme
+    :vc (:url "https://github.com/LionyxML/kusanagi-theme" :rev :newest)
+    :config
+    (load-theme 'kusanagi t))
+#+end_src
+
+** straight.el
+
+#+begin_src emacs-lisp
+  (use-package kusanagi-theme
+    :straight (:host github :repo "LionyxML/kusanagi-theme")
+    :config
+    (load-theme 'kusanagi t))
+#+end_src
+
+* Customization
+
+Because Kusanagi is a real Modus derivative, you customize it with the
+same machinery as any Modus theme.
+
+** Palette overrides
+
+Override any named color or semantic mapping:
+
+#+begin_src emacs-lisp
+  (setq kusanagi-palette-overrides
+  	  '((comment teal-mid)       ; brighter comments
+  	    (bg-main "#000000")))    ; pitch-black background
+
+  (load-theme 'kusanagi t)
+#+end_src
+
+** Extend the palette
+
+Add your own named colors for use in overrides:
+
+#+begin_src emacs-lisp
+  (setq kusanagi-palette-user
+	'((my-pink "#ff66aa")))
+
+  (setq kusanagi-palette-overrides
+	'((keyword my-pink)))
+#+end_src
+
+** Shared Modus overrides
+
+Overrides in ~modus-themes-common-palette-overrides~ also apply.
+Theme-specific (~kusanagi-palette-overrides~) take precedence over the
+shared ones.
+
+* Palette
+
+Core named colors that define the look:
+
+| Name       | Hex     | Role                       |
+|------------+---------+----------------------------|
+| ~bg-main~    | =#050810= | deep-space background      |
+| ~fg-main~    | =#68b8cc= | teal-grey foreground       |
+| ~neon-cyan~  | =#00e5ff= | builtins, links, cursor    |
+| ~hot-pink~   | =#ff0044= | errors, accents, headings  |
+| ~neon-green~ | =#00cc77= | strings, info              |
+| ~purple~     | =#cc55ff= | keywords, identifiers      |
+| ~amber~      | =#ffaa00= | numbers, types, warnings   |
+| ~orange~     | =#ff8800= | variables                  |
+| ~teal-dim~   | =#2d5a70= | comments (recede as noise) |
+
+* Thanks
+
+- Special thanks to Protesilaos Stavrou for the [[https://protesilaos.com/emacs/modus-themes][Modus themes]], the
+  infrastructure Kusanagi is built on.
+
+- Thanks to Masamune Shirow, creator of /Ghost in the Shell/, and its
+  protagonist Major Motoko Kusanagi, for all the artistic vision and
+  inspiration behind this theme.
+
+- Special thanks to David Wilson (daviwil). Kusanagi began years ago as a
+  personal experiment in customizing the Modus themes after many hours
+  spent learning from System Crafters. David's passion for Emacs and open
+  source helped inspire the project from its earliest days. Thanks also to
+  all the wonderful people in the #systemcrafters community for their
+  support, feedback, testing, ideas, and encouragement throughout the
+  project's development.
+
+* License
+
+GPL-3.0-or-later.
