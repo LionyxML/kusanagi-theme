@@ -69,17 +69,14 @@ Clone the repository and point Emacs at it:
   (use-package kusanagi-theme
     :vc (:url "https://github.com/LionyxML/kusanagi-theme" :rev :newest)
     :config
-    (add-to-list 'custom-theme-load-path
-		 (file-name-directory (locate-library "kusanagi-theme")))
     (load-theme 'kusanagi t))
 #+end_src
 
 #+begin_quote
 
-If you get =Unable to find theme file for 'kusanagi'=, the ~add-to-list~
-above is the fix. If you get =Cannot load kusanagi-theme=, your package
-archives are not refreshed and the ~modus-themes~ dependency cannot
-resolve: run ~M-x package-refresh-contents~ once, then re-evaluate.
+If you get =Cannot load kusanagi-theme=, your package archives are not
+refreshed and the ~modus-themes~ dependency cannot resolve: run ~M-x
+package-refresh-contents~ once, then re-evaluate.
 
 #+end_quote
 
@@ -89,8 +86,6 @@ resolve: run ~M-x package-refresh-contents~ once, then re-evaluate.
   (use-package kusanagi-theme
     :straight (:host github :repo "LionyxML/kusanagi-theme")
     :config
-    (add-to-list 'custom-theme-load-path
-		 (file-name-directory (locate-library "kusanagi-theme")))
     (load-theme 'kusanagi t))
 #+end_src
 
