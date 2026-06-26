@@ -317,5 +317,10 @@ neon cyan and hot pink accents against a deep-space blue background."
 
 (provide-theme 'kusanagi)
 
+;;;###autoload
+(when load-file-name
+  (add-to-list 'custom-theme-load-path
+               (file-name-as-directory (file-name-directory load-file-name))))
+
 (provide 'kusanagi-theme)
 ;;; kusanagi-theme.el ends here
