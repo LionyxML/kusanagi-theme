@@ -27,10 +27,11 @@
 
 ;;; Code:
 
-(unless (require 'modus-themes nil :noerror)
-  ;; Fall back to the copy bundled with Emacs (etc/themes is not in
-  ;; `load-path', so a plain `require' cannot find it).
-  (require-theme 'modus-themes))
+(eval-and-compile
+  (unless (require 'modus-themes nil :noerror)
+    ;; Fall back to the copy bundled with Emacs (etc/themes is not in
+    ;; `load-path', so a plain `require' cannot find it).
+    (require-theme 'modus-themes)))
 
 ;;;; User customization options
 
