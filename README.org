@@ -3,6 +3,7 @@
 #+OPTIONS: toc:2 num:nil
 
 [[https://melpa.org/#/kusanagi-theme][file:https://melpa.org/packages/kusanagi-theme-badge.svg]]
+[[https://stable.melpa.org/#/kusanagi-theme][file:https://stable.melpa.org/packages/kusanagi-theme-badge.svg]]
 
 #+HTML: <p align="center"><img src="https://raw.githubusercontent.com/LionyxML/kusanagi-theme/assets/kusanagi-theme.png" alt="Kusanagi theme screenshot" /></p>
 
