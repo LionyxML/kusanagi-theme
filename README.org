@@ -56,6 +56,16 @@ recommended.
 #+end_quote
 
 * Installation
+** Package archives (MELPA / MELPA Stable)
+
+Install =kusanagi-theme= from MELPA or MELPA Stable, then load it:
+
+#+begin_src emacs-lisp
+  (use-package kusanagi-theme
+    :ensure t
+    :config
+    (load-theme 'kusanagi t))
+#+end_src
 
 ** Manual
 
@@ -70,17 +80,16 @@ Clone the repository and point Emacs at it:
 
 #+begin_src emacs-lisp
   (use-package kusanagi-theme
-    :vc (:url "https://github.com/LionyxML/kusanagi-theme" :rev :newest)
+    :vc (:url "https://github.com/LionyxML/kusanagi-theme"
+	      :rev :newest)
     :config
     (load-theme 'kusanagi t))
 #+end_src
 
 #+begin_quote
-
-If you get =Cannot load kusanagi-theme=, your package archives are not
-refreshed and the ~modus-themes~ dependency cannot resolve: run ~M-x package-refresh-contents~
-once, then re-evaluate.
-
+If you get =Cannot load kusanagi-theme=, your package archives may not
+have been refreshed, preventing the =modus-themes= dependency from being
+resolved. Run ~M-x package-refresh-contents~ once, then re-evaluate.
 #+end_quote
 
 ** straight.el
